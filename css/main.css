@@ -8,7 +8,7 @@ body {
 }
 
 .nav a{
-	color: #d3d3d3;
+	color: #a8a8a8;
 	text-decoration: none;
 	font-size: 24px;
 	font-weight: 300;
@@ -20,6 +20,7 @@ body {
 
 /*header*/
 header nav {
+  background-color: #ff69b4;
   width:100%;
   margin-top:17px;
   display: inline-block;

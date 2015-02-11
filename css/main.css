@@ -18,6 +18,6 @@ body {
 }
 
 .background {
-	height: 700px;
-	background-image: images/face.jpeg;
+	height: 500px;
+	background-image: url(https://scontent-2.2914.fna.fbcdn.net/hphotos-xpf1/t31.0-8/1932560_2619823861614_1242741769_o.jpg);
 }

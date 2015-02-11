@@ -17,6 +17,21 @@ body {
 	padding-right: 10px;
 }
 
+header nav {
+  width:100%;
+  margin-top:17px;
+  display: inline-block;
+  list-style-type: none;
+}
+header nav ul {
+  padding:0;
+  text-align: center;
+}
+header nav ul li {
+  display: inline-block;
+  margin-right:20px;
+}
+
 .background {
 	height: 800px;
 	background-image: url(https://scontent-2.2914.fna.fbcdn.net/hphotos-xpf1/t31.0-8/1932560_2619823861614_1242741769_o.jpg);

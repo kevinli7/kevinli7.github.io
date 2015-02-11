@@ -1,0 +1,23 @@
+body {
+  color:#000000;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:300;
+  margin:0;
+  min-height:100%;
+  width:100%;
+}
+
+.nav a{
+	color: #d3d3d3;
+	font-size: 24px;
+	font-weight: 300;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.background {
+	height: 700px;
+	background-image: images/face.jpeg;
+}

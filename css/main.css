@@ -37,7 +37,7 @@ header nav ul li {
 }
 
 /*footer*/
-/*
+
 footer ul {
 	width:100%;
 	margin-top:50px;
@@ -50,12 +50,12 @@ footer ul li {
   	display: inline-block;
   	margin-right:20px;
 }
-*/
-/*footer .copyright {
+
+footer .copyright {
 	margin-bottom: 20px;
 	margin-top: 10px;
 	text-align: center;
-}*/
+}
 
 .background {
 	height: 800px;

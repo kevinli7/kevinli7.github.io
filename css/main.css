@@ -27,7 +27,7 @@ header nav {
   list-style-type: none;
 }
 header nav ul {
-	margin:1em 0;
+  margin:1em 0;
   padding:0;
   text-align: center;
 }
@@ -54,6 +54,7 @@ footer .copyright {
 	margin-bottom: 20px;
 	margin-top: 10px;
 	text-align: center;
+	text-decoration: none;
 }
 
 .background {

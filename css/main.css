@@ -1,12 +1,61 @@
 body {
-  color:#000000;
+	left: 0;
+	margin: 0;
+	overflow: hidden;
+	position
+/*  color:#000000;
   font-family: 'Open Sans', sans-serif;
   font-weight:300;
   margin:0;
   min-height:100%;
-  width:100%;
+  width:100%;*/
 }
 
+
+.background {
+	background-image: url(https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg);
+	height: 100%;
+}
+
+.icon-menu {
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-top: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.icon-menu i{
+	margin-right: 5x;
+}
+
+.menu ul {
+  border-top: 1px solid #636366;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  border-bottom: 1px solid #636366;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 45px;
+  padding-bottom: 3px;
+  padding-left: 20px;
+  padding-top: 3px;
+}
+
+.menu a {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/*
 .nav a{
 	color: #a8a8a8;
 	text-decoration: none;
@@ -18,9 +67,8 @@ body {
 	padding-right: 10px;
 }
 
-/*header*/
 header nav {
-  /*background-color: #ff69b4;*/
+  background-color: #ff69b4;
   width:100%;
   margin-top:17px;
   display: inline-block;
@@ -34,7 +82,7 @@ header nav ul {
 header nav ul li {
   display: inline-block;
   margin-right:50px;
-}
+}*/
 
 /*footer*/
 
@@ -55,9 +103,4 @@ footer .copyright {
 	margin-bottom: 20px;
 	margin-top: 10px;
 	text-align: center;
-}
-
-.background {
-	height: 800px;
-	background-image: url(https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg);
 }

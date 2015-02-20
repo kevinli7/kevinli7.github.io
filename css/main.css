@@ -11,26 +11,21 @@ body {
   width:100%;*/
 }
 
+.menu {
+  background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
+  left: -285px;  /* start off behind the scenes */
+  height: 100%;
+  position: fixed;
+  width: 285px;
+}
 
 .background {
 	background-image: url(https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg);
 	height: 100%;
-}
-
-.icon-menu {
-  color: #fff;
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  padding-bottom: 25px;
-  padding-left: 25px;
-  padding-top: 25px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.icon-menu i{
-	margin-right: 5x;
+    -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
 }
 
 .menu ul {
@@ -55,6 +50,23 @@ body {
   text-decoration: none;
   text-transform: uppercase;
 }
+
+.icon-menu {
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-top: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.icon-menu i{
+  margin-right: 5x;
+}
+
 /*
 .nav a{
 	color: #a8a8a8;

@@ -6,7 +6,7 @@ body {
 }
 
 .menu {
-  background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
+  /*background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;*/
   /*top: -50;   start off behind the scenes */
   height: 50;
   position: fixed;
@@ -37,6 +37,7 @@ body {
   padding-left: 20px;
   padding-top: 3px;
   display: inline-block;
+  text-align: right;
 }
 
 .menu a {

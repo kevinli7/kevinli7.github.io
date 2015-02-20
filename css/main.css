@@ -9,10 +9,10 @@ body {
 /* Initial menu */
 .menu {
   background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
-  left: -285px;  /* start off behind the scenes */
-  height: 100%;
+  /*top: -66px;   start off behind the scenes */
+  height: 66px;
   position: fixed;
-  width: 285px;
+  width: 100%;
 }
 
 /* Basic styling */
@@ -20,10 +20,6 @@ body {
 .background {
   background-image: url('https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg'); 
   height: 100%;
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
-          background-size: cover;
 }
 
 .menu ul {
@@ -31,6 +27,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: inline-block;
 }
 
 .menu li {

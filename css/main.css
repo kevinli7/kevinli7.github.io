@@ -7,8 +7,8 @@ body {
 
 .menu {
   /*background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;*/
-  /*top: -50;   start off behind the scenes */
-  height: 50;
+  top: -50;   /*start off behind the scenes*/ 
+  height: 66;
   position: fixed;
   width: 100%;
 }
@@ -16,10 +16,7 @@ body {
 .background {
 	background-image: url(https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg);
 	height: 100%;
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
-          background-size: cover;
+  background-size: cover;
 }
 
 .menu ul {

@@ -16,6 +16,7 @@ html {
 
 /* Initial menu */
 .menu {
+  z-index: 1;
   background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
   top: -66px;   /*start off behind the scenes*/ 
   height: 66px;
@@ -59,7 +60,7 @@ html {
 }*/
 
 .icon-menu {
-  z-index: -1;
+  z-index: 2;
   color: #fff;
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;

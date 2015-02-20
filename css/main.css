@@ -5,20 +5,20 @@ body {
 	position: relative;
 }
 
+.background {
+  background-image: url(https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg);
+  height: 100%;
+  background-size: cover;
+}
+
 .menu {
-  /*background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;*/
+  background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
   top: -66px;   /*start off behind the scenes*/ 
   height: 66px;
   position: fixed;
   width: 100%;
 }
 
-.background {
-	background-image: url(https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg);
-	height: 100%;
-  background-size: cover;
-}
-/*
 .menu ul {
   border-top: 1px solid #636366;
   list-style: none;
@@ -59,24 +59,3 @@ body {
 .icon-menu i{
   margin-right: 5x;
 }
-*/
-/*footer*//*
-
-footer ul {
-	width:100%;
-	margin-top:50px;
-	margin:1em 0;
-	padding: 0;
-	text-align: center;
-}
-
-footer ul li {
-  	display: inline-block;
-  	margin-right:20px;
-}
-
-footer .copyright {
-	margin-bottom: 20px;
-	margin-top: 10px;
-	text-align: center;
-}*/

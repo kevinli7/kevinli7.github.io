@@ -3,26 +3,20 @@ body {
 	margin: 0;
 	overflow: hidden;
 	position: relative;
-/*  color:#000000;
-  font-family: 'Open Sans', sans-serif;
-  font-weight:300;
-  margin:0;
-  min-height:100%;
-  width:100%;*/
 }
 
 .menu {
   background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
-  left: -285px;  /* start off behind the scenes */
-  height: 100%;
+  /*top: -50;   start off behind the scenes */
+  height: 50;
   position: fixed;
-  width: 285px;
+  width: 100%;
 }
 
 .background {
 	background-image: url(https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg);
 	height: 100%;
-    -webkit-background-size: cover;
+  -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
           background-size: cover;
@@ -42,6 +36,7 @@ body {
   padding-bottom: 3px;
   padding-left: 20px;
   padding-top: 3px;
+  display: inline-block;
 }
 
 .menu a {

@@ -1,9 +1,9 @@
 var main = function() {
   /* Push the body and the nav over by 285px over */
   $('.icon-menu').click(function() {
-    var tog = true;
-      if (tog){
-        tog = false;
+    var tog = 1;
+      if (tog == 1){
+        tog = 0;
         $('.menu').animate({
           top: "0px"
         }, 100);
@@ -11,7 +11,7 @@ var main = function() {
         //   left: "285px"
         // }, 200);
       } else {
-        tog = true;
+        tog = 1;
         $('.menu').animate({
           top: "-66px"
         }, 100);

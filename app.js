@@ -1,9 +1,16 @@
 var main = function() {
   /* Push the body and the nav over by 285px over */
-  $('.icon-menu').hover(
-      function() {$('.menu').animate({top: "0px"}, 100);}, 
-      function() {$('.menu').animate({top: "-66px"}, 100);}
-  )
+  $('.icon-menu').mouseover(function() {
+    $('.menu').animate({top: "0px"}, 100);
+  })
+  .mouseout(function() {
+    $('.menu').animate({top: "-66px"}, 100);
+  });
+
+  // $('.icon-menu').hover(
+  //     function() {$('.menu').animate({top: "0px"}, 100);}, 
+  //     function() {$('.menu').animate({top: "-66px"}, 100);}
+  // )
 };
 
 

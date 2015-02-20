@@ -59,7 +59,10 @@ html {
 }*/
 
 .icon-menu {
-  z-index: 100;
+    width: 100%;
+    height: 66px;
+    cursor: pointer;
+/*  z-index: 100;
   color: #fff;
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
@@ -68,7 +71,7 @@ html {
   padding-left: 25px;
   padding-top: 100px;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: uppercase;*/
 }
 
 .icon-menu i {

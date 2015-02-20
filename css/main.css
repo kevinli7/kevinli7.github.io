@@ -18,7 +18,7 @@ body {
 	height: 100%;
   background-size: cover;
 }
-
+/*
 .menu ul {
   border-top: 1px solid #636366;
   list-style: none;
@@ -59,8 +59,8 @@ body {
 .icon-menu i{
   margin-right: 5x;
 }
-
-/*footer*/
+*/
+/*footer*//*
 
 footer ul {
 	width:100%;
@@ -79,4 +79,4 @@ footer .copyright {
 	margin-bottom: 20px;
 	margin-top: 10px;
 	text-align: center;
-}
+}*/

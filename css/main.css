@@ -72,5 +72,6 @@ html {
 }
 
 .icon-menu i {
+  z-index: 101;
   margin-right: 5px;
 }

@@ -27,6 +27,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  text-align: right; 
 }
 
 .menu li {
@@ -37,7 +38,6 @@ body {
   padding-left: 20px;
   padding-top: 3px;
   display: inline-block;
-  text-align: right;
 }
 
 .menu a {

@@ -1,7 +1,7 @@
 var main = function() {
   /* Push the body and the nav over by 285px over */
   $('.icon-menu').click(function() {
-    var top = $( this ).css( "top" );
+    var top = $('.menu').css( "top" );
     console.log(top);
     if (top != 0){
       $('.menu').animate({

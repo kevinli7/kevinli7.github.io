@@ -18,7 +18,11 @@ body {
 /* Basic styling */
 
 .background {
-  background-image: url('https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg'); 
+  background-image: url('https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
   height: 100%;
 }
 
@@ -27,7 +31,6 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: inline-block;
 }
 
 .menu li {
@@ -37,6 +40,7 @@ body {
   padding-bottom: 3px;
   padding-left: 20px;
   padding-top: 3px;
+  display: inline-block;
 }
 
 .menu a {

@@ -9,7 +9,7 @@ var main = function() {
       }, 100);
      }
   )};
-};
+
 
 //   $('.icon-menu').click(function() {
 //     var top = $('.menu').css( "top" );

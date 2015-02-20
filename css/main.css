@@ -57,6 +57,7 @@ html {
 }*/
 
 .icon-menu {
+  z-index: -1;
   color: #fff;
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;

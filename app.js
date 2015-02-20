@@ -6,7 +6,7 @@ var main = function() {
         tog = false;
         $('.menu').animate({
           top: "0px"
-        }, 200);
+        }, 100);
         // $('body').animate({
         //   left: "285px"
         // }, 200);
@@ -14,7 +14,7 @@ var main = function() {
         tog = true;
         $('.menu').animate({
           top: "-66px"
-        }, 200);
+        }, 100);
       }
   });
 };

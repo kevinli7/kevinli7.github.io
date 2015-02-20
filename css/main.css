@@ -1,5 +1,11 @@
 /* Initial body */
 body {
+  background-image: url('https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+
   left: 0;
   margin: 0;
   overflow: hidden;
@@ -18,11 +24,6 @@ body {
 /* Basic styling */
 
 .background {
-  background-image: url('https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; 
   height: 100%;
 }
 

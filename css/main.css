@@ -7,8 +7,8 @@ body {
 
 .menu {
   /*background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;*/
-  top: -50;   /*start off behind the scenes*/ 
-  height: 66;
+  top: -66px;   /*start off behind the scenes*/ 
+  height: 66px;
   position: fixed;
   width: 100%;
 }
@@ -62,7 +62,7 @@ body {
 
 /*footer*/
 
-/*footer ul {
+footer ul {
 	width:100%;
 	margin-top:50px;
 	margin:1em 0;
@@ -79,4 +79,4 @@ footer .copyright {
 	margin-bottom: 20px;
 	margin-top: 10px;
 	text-align: center;
-}*/
+}

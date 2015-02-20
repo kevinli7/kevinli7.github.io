@@ -1,22 +1,29 @@
+/* Initial body */
 body {
-	left: 0;
-	margin: 0;
-	overflow: hidden;
-	position: relative;
+  left: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
 }
 
-.background {
-  background-image: url(https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg);
-  height: 100%;
-  background-size: cover;
-}
-
+/* Initial menu */
 .menu {
   background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
-  top: -66px;   /*start off behind the scenes*/ 
-  height: 66px;
+  left: -285px;  /* start off behind the scenes */
+  height: 100%;
   position: fixed;
-  width: 100%;
+  width: 285px;
+}
+
+/* Basic styling */
+
+.background {
+  background-image: url('https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg'); 
+  height: 100%;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
 }
 
 .menu ul {
@@ -24,7 +31,6 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: right; 
 }
 
 .menu li {
@@ -34,7 +40,6 @@ body {
   padding-bottom: 3px;
   padding-left: 20px;
   padding-top: 3px;
-  display: inline-block;
 }
 
 .menu a {
@@ -43,6 +48,12 @@ body {
   text-decoration: none;
   text-transform: uppercase;
 }
+/*
+.icon-close {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-top: 10px;
+}*/
 
 .icon-menu {
   color: #fff;
@@ -56,6 +67,6 @@ body {
   text-transform: uppercase;
 }
 
-.icon-menu i{
-  margin-right: 5x;
+.icon-menu i {
+  margin-right: 5px;
 }

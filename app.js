@@ -3,7 +3,7 @@ var main = function() {
   $('.icon-menu').click(function() {
     var top = $('.menu').css( "top" );
     console.log(top);
-    if (top != 0){
+    if (top != '0px'){
       $('.menu').animate({
         top: "0px"
       }, 100);

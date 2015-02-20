@@ -7,7 +7,7 @@ body {
 }
 
 html { 
-  background: url('https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/face.jpg') no-repeat center center fixed; 
+  background: url('https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/images/yosemite.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -17,7 +17,7 @@ html {
 /* Initial menu */
 .menu {
   background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
-  /*top: -66px;   start off behind the scenes */
+  top: -66px;   /*start off behind the scenes*/ 
   height: 66px;
   position: fixed;
   width: 100%;
@@ -25,24 +25,21 @@ html {
 
 /* Basic styling */
 
-.background {
-  height: 100%;
-}
-
 .menu ul {
   border-top: 1px solid #636366;
   list-style: none;
   margin: 0;
   padding: 0;
+  text-align: right;
 }
 
 .menu li {
-  border-bottom: 1px solid #636366;
+  /*border-bottom: 1px solid #636366;*/
   font-family: 'Open Sans', sans-serif;
-  line-height: 45px;
-  padding-bottom: 3px;
-  padding-left: 20px;
-  padding-top: 3px;
+  /*line-height: 45px;*/
+  padding-bottom: 20px;
+  /*padding-left: 20px;*/
+  padding-top: 20px;
   display: inline-block;
 }
 

@@ -32,7 +32,6 @@ html {
   margin: 0;
   padding: 0;
   text-align: right;
-  word-spacing: 30px;
 }
 
 .menu li {
@@ -60,7 +59,7 @@ html {
 }*/
 
 .icon-menu {
-  z-index: 2;
+  z-index: 100;
   color: #fff;
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;

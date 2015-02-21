@@ -21,7 +21,7 @@ html {
   /*top: -66px;   start off behind the scenes */
   height: 66px;
   position: fixed;
-  width: 100%;
+  width: 100px;
 }
 
 .name{

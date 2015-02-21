@@ -17,14 +17,14 @@ html {
 /* Initial menu */
 .menu {
   z-index: 1;
-  background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
+  background: #202024; /*url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;*/
   /*top: -66px;   start off behind the scenes */
   height: 66px;
   position: fixed;
   width: 100%;
 }
 
-.menu name{
+.name{
   color: #fff;
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;

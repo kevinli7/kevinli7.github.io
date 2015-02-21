@@ -22,9 +22,16 @@ html {
   height: 66px;
   position: fixed;
   width: 100%;
+}
+
+.menu name{
+  color: #fff;
   font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding-left: 30px;
-  text-align: left
+  text-align: left;
 }
 
 /* Basic styling */

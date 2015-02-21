@@ -26,6 +26,7 @@ html {
 }
 
 .name{
+  position: absolute;
   z-index: 1;
   color: #fff;
   font-family: 'Open Sans', sans-serif;

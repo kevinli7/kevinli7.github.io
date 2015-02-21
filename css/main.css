@@ -16,6 +16,8 @@ html {
 
 /* Initial menu */
 .menu {
+  top: 0;
+  left: 0;
   position: absolute;
   z-index: 0;
   background: #202024; /*url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;*/
@@ -26,6 +28,8 @@ html {
 }
 
 .name{
+  top: 0;
+  left: 0;
   position: absolute;
   z-index: 1;
   color: #fff;

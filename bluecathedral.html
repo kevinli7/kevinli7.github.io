@@ -49,7 +49,7 @@
 	        		assignment. As a quick introduction, I am a fourth year at UC Berkeley studying Computer Science who 
 	        		will be working as a Software Engineer after graduation. I am also working at ICSI as an undergraduate researcher where
 	        		I mainly focus on Computer Vision but also work with other students who focus on audio. Through discussions with
-	        		those students and classes I have learned a few things about audio processing which I will apply to Blue Cathedral by 
+	        		those students and classes I have learned a few things about audio processing which I will apply to <i>Blue Cathedral</i> by 
 	        		Jennifer Higdon. All code used in this assignment is available 
 	        		<a href='https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/data/visualize_music.py'>here</a>.
 	        	</p>
@@ -118,13 +118,78 @@
 	        		<b>9:30 - </b> These themes build to a climax which sounds like the end. But instead of getting what we expect (dissonance), we anti-climatically return back to the theme in the beginning. The piece returns to the two soloists and until the end of the song it sounds very much like the beginning. The ending however differs at around
 	        		11:47 with instead of just the chime/bell like sounds, the piano comes in repeatedly playing a single note.
 	        	</p>
-	        	TODO(Kevin): Talk about how this is sort of a flight of emotions marked by grief.
+	        	<p>
+	        		From the title and beginning of the song with the chime/bell like sounds, one might think that this piece is similar to program music that just intends to
+	        		depict something with musical themes. But upon a closer listening, a dialogue between the flute and clarinet reveals itself. Either in conversation or speaking
+	        		together. However, with the orchestral parts at three and six minutes in, we get a vastly different section where the orchestra plays and deep and rumbling musical theme.
+	        		These sections are somewhat uneasing and troubling. It's like a building up of grief and pain almost.  There are a lot of different sections of the orchestra playing all
+	        		at once all battling for attention. I've <a href="https://www.reddit.com/r/Assistance/comments/hax0t/my_friend_just_died_i_dont_know_what_to_do/c1u0rx2/">read</a> that the 
+	        		grief of loss is often something that hits you in waves, sometimes coming suddenly and vanishing just as quickly. In this piece there are two sections where the orchestra
+	        		plays a dark and ominous tone that I believe represents grief. And just as quickly as they come they go away, even more remarkably so in the second section where
+	        		the orchestral section very unexpectedly fades away into the two soloists playing. The background for this piece is it is a dedication to Jennifer Higdon's late brother.
+	        		With this knowledge, the piece ties quickly together and the emotion packed into the piece becomes even more apparent.
+	        	</p>
 	        	<hr>
 	        	<h2>How this relates to other music we've studied</h2>
 	        	<img id="t-SNE" src="images/tsnevis.png" title="t-SNE embedding of different songs.">
-
-						<!-- Plotly chart will be drawn inside this DIV -->
+	        	<p class='caption'> 
+	        		 t-SNE visualization of MFCC (mel-frequency cepstral coefficients) features calculated on one second frames of songs of different musical periods.
+	        	</p>
+	        	<!-- Plotly chart will be drawn inside this DIV -->
 						<div id="3d t-SNE" style="width:100%;height:100%"></div>
+						<p class='caption'> 
+	        		 3D t-SNE visualization of MFCC (mel-frequency cepstral coefficients) features calculated on one second frames of songs of different musical periods.
+	        	</p>
+	        	<p>
+	        		Part of the prompt asks us to talk about similarities between our chosen piece and other pieces of music we've studied. Using techniques from
+	        		machine learning research, I have made a simplistic visualization of similarities between the piece and the genres.  As I mentioned above,
+	        		MFCC (mel-frequency cepstral coefficients) features are becoming a standard type of feature used in many machine learning tasks such as speech recognition
+	        		or genre classification.  This means that these features can capture some intrinsic quality about the music which can identify genres.  However, this data
+	        		ends up being relatively high-dimensional so it can be hard to visualize these features and how they compare. t-Distributed Stochastic Neighbor Embedding (t-SNE) 
+	        		is a technique for taking high dimensional data and embedding it into a lower dimensional space. In other words, it can be used to visualize to visualize high 
+	        		dimensional features in a lower dimensional space with the idea being that similar features in the higher dimensional space will be closer together in the low
+	        		dimensional space.  I took 1 second frames of each song and calculated MFCC features from these frames and then selected 100 of these features randomly from each song
+	        		and mapped them to 2D and 3D spaces to visualize similarities between <i>Blue Cathedral</i> and other genres we have studied.  The obvious limitation is I am
+	        		comparing 1 second frames intead of the whole songs, but these one second frames can capture a surprising amount of information about music. Above I have a 2D scatter plot
+	        		and a 3D scatter plot (which is interactive!) of these embeddings.  The 2D one is a lot easier to see and view than the 3D plot, but I thought the 3D plot was fun to play with.
+	        	</p>
+	        	<p>
+	        		From the 2D scatter plot, I see points representing <i>Blue Cathedral</i> clustered around lots of classical and romantic points.  There are some sections that are similar
+	        		to 20th and 21st century music but a lot seems to be around classical and romantic.  I find this to be particularly interesting because before I made these plots, this is the 
+	        		era of music I thought this piece to have lots of similarities to.  Perhaps they are close to these other genres in this graph because of similar instrumentation and music,
+	        		but the reason I think these genres are similar to <i>Blue Cathedral</i> is because of the form for classical and the individualism/emotion of romantic music.
+	        	</p>
+	        	<p>
+	        		Classical music was the era where sonata form came to be. Sonata form is strutured as an exposition with two themes, a development section and a recapitulation which is 
+	        		basically (and way oversimplified) a repeat of the exposition. In this piece, it begins with a theme played by the flute and clarinet, either separately or together.  This
+	        		introductory theme is also brought back again at the end but what I find more interesting is the parts in the middle.  In sandwich between these two repeated themes, there is
+	        		sort of a transitionary theme played by the whole orchestra and the soloists that represent grief, a middle, quieter section that features a build up with oboes, violins, and 
+	        		cellos into the another darker section that represents grief.  While this is obviously not sonata form, I believe there are similarities in that it has a repetitive beggining and end,
+	        		dialogue between two soloists, and the piece as a whole telling a story about loss and love. 
+	        	</p>
+	        	<p>
+	        		The story about loss and love brings me into the ties of Romanticism.  The Romantic era was characteristic in it's expression of emotions and ties to nature. The whole piece is
+	        		a grief filled dedication to a lost brother. This emotion is shown by the meandering, almost-lost melody of the clarinets and flutes and the dark, rumbling sections played by
+	        		the orchestra in the middle. These dark rumbling sections remind me of a (perhaps metaphorical) thunderstorm that may be representative of the dark and stormy feelings caused
+	        		by the loss of a loved one.  This would be similar to the representation of nature that is very present in the Romantic music.
+	        	</p>
+
+	        	<h2>My Personal Reaction</h2>
+	        	<p>
+	        		My first listen to the piece, it was a nice melody (which reminded me of the opening song of Good Will Hunting a little bit), but the song seemed to have little
+	        		structure and melody seemed to be wandering aimlessly. The darker section played by the orchestra as a whole took me a little by surprise (which may be the intended effect). 
+	        		I thought the piece was very beautiful but wasn't entirely sure what to think about it.  After a few more listens, I did some research on the piece to find the motivation
+	        		of the piece and found some program notes by the composer which to me revealed a lot about the piece (I personally believe program notes to be very useful in revealing
+	        		the true nature of a song unlike Schumann).  I started to see the solos as one's journey through life, which to some degree is aimless wandering with life taking you
+	        		wherever it will. The darker orchestral sections represent the grief of the loss of ones brother, but potentially also the darker and more uncertain parts of life.  And what I found
+	        		incredibly beautiful was the flute dropping out near the end and having the clarinet finish the song.  Clarinet was the instrument that Higdon's brother played and one can see it as
+	        		Jennifer Higdon portraying her brother's journey past the end of his life.
+	        	</p>
+	        	<p>
+	        		I ended up finding the song to be very enjoyable, and filled with meaning with some more active listening. The flute and clarinet's dialogue seemed to me like a final conversation
+	        		between Higdon and her brother. The strings and woodwinds gave a floating feeling to the piece, while the percussion and brass kept the piece grounded and created some urgency.  Overall,
+	        		I thought the piece was beautifully composed and conveys all the ideas that the composer wanted to get through.
+	        	</p>
 					</div>
 				</div>
 			</div>

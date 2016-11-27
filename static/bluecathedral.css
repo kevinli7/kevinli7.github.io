@@ -1,0 +1,66 @@
+.post-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.post-title {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 48px;
+  font-weight: normal;
+}
+.post-description {
+  font-size: 20px;
+  color: #999;
+  margin-bottom: 0;
+}
+/*
+ * Masthead for nav
+ */
+.post-masthead {
+  background-color: #428bca;
+  -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+          box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+}
+
+.post-nav-item {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  font-weight: 500;
+  color: #cdddeb;
+}
+.post-nav-item:hover,
+.post-nav-item:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.caption {
+	font-size: 14px;
+  color: #999;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.post-nav .active {
+  color: #fff;
+}
+
+.post-meta {
+	margin-bottom: 20px;
+  color: #999;
+}
+
+.post-main {
+	font-family: Open Sans;
+	font-size: 18px;
+}
+
+#t-SNE {
+	width:100%;
+}
+
+#spect {
+	width:100%;
+	margin-bottom: 0;
+}

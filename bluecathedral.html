@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    <title>Music 27 Assignment 2</title>
+    <!-- Style -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- Plotly.js -->
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" type="text/css" href="static/bluecathedral.css">
+	</head>
+
+	<body>
+
+		<div class="post-masthead">
+      <div class="container">
+        <nav class="post-nav">
+          <a class="post-nav-item" href="index.html">Home</a>
+          <a class="post-nav-item active" href="#">Kevin's Music 27 Assignment 2</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+    	<div class="post-header">
+        <h1 class="post-title">Music 27 Assignment 2</h1>
+        <p class="lead post-description">Higdon's <i>Blue Cathedral</i></p>
+        <p class="post-meta">December 1, 2017 by Kevin Li, Dis 107</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-10 blog-main">
+        	<div class="post-main">
+        	  <p>
+	        		Since the prompt was very flexible for the medium we were allowed to present in, I chose to
+	        		try and take a more unique approach by applying the skills I have learned in my major (Computer Science) to this
+	        		assignment. As a quick introduction, I am a fourth year at UC Berkeley studying Computer Science who 
+	        		will be working as a Software Engineer after graduation. I am also working at ICSI as an undergraduate researcher where
+	        		I mainly focus on Computer Vision but also work with other students who focus on audio. Through discussions with
+	        		those students and classes I have learned a few things about audio processing which I will apply to Blue Cathedral by 
+	        		Jennifer Higdon. All code used in this assignment is available 
+	        		<a href='https://raw.githubusercontent.com/kevinli7/kevinli7.github.io/master/data/visualize_music.py'>here</a>.
+	        	</p>
+	        	<hr>
+	        	<h3>Details About the Piece</h3>
+	        	<img id="spect" src="images/melspectBC.png" title="Mel-Spectrogram of Blue Cathedral.">
+	        	<p class='caption'> Mel power spectrogram of Blue Cathedral.  Through this we can get a glimpse of the major sections of the piece.</p>
+	        	<p>
+	        		I decided to take the piece and 
+	        	</p>
+
+
+	        	<img id="t-SNE" src="images/tsnevis.png" title="t-SNE embedding of different songs.">
+
+						<!-- Plotly chart will be drawn inside this DIV -->
+						<div id="3d t-SNE" style="width:100%;height:100%"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script src="static/bluecathedral.js"></script>
+</html>
+        

@@ -35,7 +35,7 @@
             } 
             currInterval = setInterval(
               function() {
-                deg = deg + rot;
+                deg = (deg + rot) % 360;
                 cat.style.transform = "rotate(" + deg + "deg)";
               }, 
               10);

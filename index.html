@@ -11,7 +11,7 @@
   
   <body>
     <div class="my-info">
-      <img id="cat" src="images/typingcat.gif" title="Kevin hard at work!">
+      <img id="cat" src="images/typingcat.gif" title="Click me.">
       <div id="my-name">
         Kevin N. Li
       </div>
@@ -22,5 +22,24 @@
         no-reply@kevinnli.com
       </p>
     </div>
+
+    <script>
+        var cat = document.getElementById('cat'),
+            rot = 0,
+            deg = 0,
+            currInterval = null; 
+        cat.onclick = function() {
+            rot = rot + 0.1;
+            if (currInterval != null) {
+              clearInterval(currInterval);
+            } 
+            currInterval = setInterval(
+              function() {
+                deg = deg + rot;
+                cat.style.transform = "rotate(" + deg + "deg)";
+              }, 
+              10);
+        };
+    </script>
   </body>
 </html>

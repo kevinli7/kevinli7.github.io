@@ -2,6 +2,7 @@ var cat = document.getElementById('cat'),
     body = document.getElementsByTagName("body")[0]
     rip = document.getElementById('rip'),
     rot = 0,
+    dRot = 0.5,
     deg = 0,
     x = 0,
     y = 0,
@@ -13,9 +14,16 @@ var cat = document.getElementById('cat'),
 
 // Let it rip screen variables
 var rip2 = document.getElementById('letitrip'),
+    pBar = document.getElementById('bar'),
+    pBarDiv = document.getElementById('pBarDiv'),
     ripvis = false,
     ripInterval = null,
-    color = "white";
+    color = "white",
+    width = 0,
+    threshold = 15;
+
+var numClicks = 0,
+    clicksReq = Math.ceil(threshold / dRot);
 
 var bodyRect = body.getBoundingClientRect();
 var hitBoundaries = function(catRect, bodyRect) {
@@ -25,11 +33,15 @@ var hitBoundaries = function(catRect, bodyRect) {
 }
 
 cat.onclick = function() {
-    rot = rot + 0.5;
+    rot = rot + dRot;
+    numClicks += 1;
+    if (!pBarDiv.style.visibility) {
+        pBarDiv.style.visibility = "visible";
+    }
     if (currInterval != null) {
       clearInterval(currInterval);
     } 
-    if (rot > 10) {
+    if (rot > threshold) {
         if (!ripvis) {
             ripvis = true;
             rip2.style.visibility = "visible";
@@ -44,6 +56,9 @@ cat.onclick = function() {
                 },
                 500);
         }
+    } else {
+        var perc = numClicks / clicksReq * 100;
+        pBar.style.width = perc + "%";
     }
     currInterval = setInterval(
       function() {
@@ -79,6 +94,7 @@ var getRandomSpeed = function() {
 rip.onclick = function() {
     clearInterval(ripInterval);
     rip2.style.visibility = "hidden";
+    pBarDiv.style.visibility = "hidden";
     dx = getRandomSpeed();
     dy = getRandomSpeed();
 }

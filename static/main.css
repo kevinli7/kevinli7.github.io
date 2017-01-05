@@ -1,6 +1,4 @@
 .my-info {
-/*	display: table-cell;*/
-/*  vertical-align: middle;*/
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
@@ -26,7 +24,22 @@
 }
 
 #rip {
+	padding: 20px 40px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#letitrip {
 	visibility: hidden;
+	position: absolute;
+	padding-top: 200px;
+	text-align: center;
+	color: red;
+	background: rgba(0,0,0,0.8);
+	font-size: 100px;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
 }
 
 html, body {

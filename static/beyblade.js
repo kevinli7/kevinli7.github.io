@@ -11,6 +11,12 @@ var cat = document.getElementById('cat'),
     yFlipped = 0,
     currInterval = null; 
 
+// Let it rip screen variables
+var rip2 = document.getElementById('letitrip'),
+    ripvis = false,
+    ripInterval = null,
+    color = "white";
+
 var bodyRect = body.getBoundingClientRect();
 var hitBoundaries = function(catRect, bodyRect) {
     changeX = (catRect.right > bodyRect.right - 15) || (catRect.left < bodyRect.left + 15)
@@ -24,7 +30,20 @@ cat.onclick = function() {
       clearInterval(currInterval);
     } 
     if (rot > 10) {
-        rip.style.visibility = "visible";
+        if (!ripvis) {
+            ripvis = true;
+            rip2.style.visibility = "visible";
+            ripInterval = setInterval(
+                function() {
+                    rip2.style.color = color
+                    if (color == "white") {
+                        color = "red"
+                    } else {
+                        color = "white"
+                    }
+                },
+                500);
+        }
     }
     currInterval = setInterval(
       function() {
@@ -58,6 +77,8 @@ var getRandomSpeed = function() {
 }
 
 rip.onclick = function() {
-  dx = getRandomSpeed();
-  dy = getRandomSpeed();
+    clearInterval(ripInterval);
+    rip2.style.visibility = "hidden";
+    dx = getRandomSpeed();
+    dy = getRandomSpeed();
 }

@@ -3,9 +3,9 @@
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
-	margin-top: 50px;
+	margin-top: 100px;
 	font-family: Open Sans;
-	font-size: 20px;
+	font-size: 24px;
 }
 
 #my-name {
@@ -15,8 +15,8 @@
 
 #cat {
 	position: relative;
-	height: 250px;
-	width: 250px;
+	height: 350px;
+	width: 350px;
 }
 
 #email {
@@ -48,7 +48,7 @@
 	margin-top: 10px;
 	margin-right: auto;
 	margin-left: auto;
-	width: 40%;
+	width: 50%;
 }
 
 #progressBar {
@@ -79,4 +79,28 @@ body {
 
 p {
 	margin: 0px;
+}
+
+@media screen and (max-width: 480px) {
+	.my-info {
+		margin-top: 50px;
+		font-size: 20px;
+	}
+
+	#cat {
+		height: 250px;
+		width: 250px;
+	}
+
+	#letitrip {
+		padding-top: 100px;
+	}
+
+	body {
+		position: fixed;
+		margin: 0px;
+		width: 100%;
+		margin-top: -50px;
+		padding-top: 50px;
+	}
 }

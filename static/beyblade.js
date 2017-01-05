@@ -28,7 +28,8 @@ var numClicks = 0,
 var bodyRect = body.getBoundingClientRect();
 var hitBoundaries = function(catRect, bodyRect) {
     changeX = (catRect.right > bodyRect.right - 15) || (catRect.left < bodyRect.left + 15)
-    changeY = (catRect.bottom > bodyRect.bottom - 15) || (catRect.top < bodyRect.top + 15)
+    //TODO: figure out why top bounding rect is -100, for now just use 0 instead of bodyRect.top
+    changeY = (catRect.bottom > bodyRect.bottom - 15) || (catRect.top < 0 + 15) 
     return [changeX, changeY]
 }
 

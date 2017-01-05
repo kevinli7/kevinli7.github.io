@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kevin Li</title>
      <!-- This is a funny comment *hidden away* in the page source! -->
 
@@ -21,25 +23,8 @@
       <p id="email">
         no-reply@kevinnli.com
       </p>
+      <button id="rip" type="button">Let it rip!!!</button>
     </div>
-
-    <script>
-        var cat = document.getElementById('cat'),
-            rot = 0,
-            deg = 0,
-            currInterval = null; 
-        cat.onclick = function() {
-            rot = rot + 0.1;
-            if (currInterval != null) {
-              clearInterval(currInterval);
-            } 
-            currInterval = setInterval(
-              function() {
-                deg = (deg + rot) % 360;
-                cat.style.transform = "rotate(" + deg + "deg)";
-              }, 
-              10);
-        };
-    </script>
+    <script src="static/beyblade.js"></script>
   </body>
 </html>

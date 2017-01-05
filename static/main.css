@@ -1,7 +1,11 @@
 .my-info {
-	display: table-cell;
+/*	display: table-cell;*/
+/*  vertical-align: middle;*/
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 	text-align: center;
-	vertical-align: middle;
+	margin-top: 100px;
 	font-family: Open Sans;
 	font-size: 24px;
 }
@@ -12,6 +16,7 @@
 }
 
 #cat {
+	position: relative;
 	height: 350px;
 	width: 350px;
 }
@@ -20,13 +25,20 @@
 	font-size: 80%;
 }
 
+#rip {
+	visibility: hidden;
+}
+
 html, body {
     height: 100%;
 }
 
 body {
-	display: table;
+	position: fixed;
+	margin: 0px;
 	width: 100%;
+	margin-top: -100px;
+	padding-top: 100px;
 }
 
 p {

@@ -41,7 +41,7 @@ cat.onclick = function() {
     if (currInterval != null) {
       clearInterval(currInterval);
     } 
-    if (rot > threshold) {
+    if (rot >= threshold) {
         if (!ripvis) {
             ripvis = true;
             rip2.style.visibility = "visible";

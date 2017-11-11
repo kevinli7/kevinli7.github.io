@@ -1,6 +1,6 @@
 var cat = document.getElementById('cat'),
     body = document.getElementsByTagName("body")[0]
-    rip = document.getElementById('rip'),
+    rip = document.getElementById('spin'),
     rot = 0,
     dRot = 0.5,
     deg = 0,
@@ -13,7 +13,7 @@ var cat = document.getElementById('cat'),
     currInterval = null; 
 
 // Let it rip screen variables
-var rip2 = document.getElementById('letitrip'),
+var rip2 = document.getElementById('makeitspin'),
     pBar = document.getElementById('bar'),
     pBarDiv = document.getElementById('pBarDiv'),
     ripvis = false,
@@ -27,21 +27,26 @@ var numClicks = 0,
 
 var bodyRect = body.getBoundingClientRect();
 var hitBoundaries = function(catRect, bodyRect) {
-    changeX = (catRect.right > bodyRect.right - 15) || (catRect.left < bodyRect.left + 15)
+    // Returns two booleans indicating whether or not the x and y boundaries have been hit.
+    hitXBounadry = (catRect.right > bodyRect.right - 15) || (catRect.left < bodyRect.left + 15)
     //TODO: figure out why top bounding rect is -100, for now just use 0 instead of bodyRect.top
-    changeY = (catRect.bottom > bodyRect.bottom - 15) || (catRect.top < 0 + 15) 
-    return [changeX, changeY]
+    hitYBoundary = (catRect.bottom > bodyRect.bottom - 15) || (catRect.top < 0 + 15) 
+    return [hitXBounadry, hitYBoundary]
 }
 
 cat.onclick = function() {
     rot = rot + dRot;
     numClicks += 1;
+
+    // Show progress bar after first click/
     if (!pBarDiv.style.visibility) {
         pBarDiv.style.visibility = "visible";
     }
-    if (currInterval != null) {
-      clearInterval(currInterval);
-    } 
+    // Split up if statements so progress bar completes correctlty.
+    if (rot <= threshold)  {
+        var perc = numClicks / clicksReq * 100;
+        pBar.style.width = perc + "%";
+    }
     if (rot >= threshold) {
         if (!ripvis) {
             ripvis = true;
@@ -57,10 +62,12 @@ cat.onclick = function() {
                 },
                 500);
         }
-    } else {
-        var perc = numClicks / clicksReq * 100;
-        pBar.style.width = perc + "%";
-    }
+    } 
+
+    // Despite having the verb 'set', setInterval does not replace
+    // the old interval. So clear it first or else the cat will
+    // get too dizzy.
+    clearInterval(currInterval);
     currInterval = setInterval(
       function() {
         // Rotation
@@ -72,6 +79,8 @@ cat.onclick = function() {
         y += dy;
         cat.style.right = x + "px";
         cat.style.top = y + "px";
+
+        // If the cat gif hits a boundary, then change direction.
         bHit = hitBoundaries(cat.getBoundingClientRect(), bodyRect);
         if (bHit[0] && xFlipped == 0) {
           dx = -1 * dx;
@@ -96,6 +105,9 @@ rip.onclick = function() {
     clearInterval(ripInterval);
     rip2.style.visibility = "hidden";
     pBarDiv.style.visibility = "hidden";
+
+    // Give each user a truly `U N I Q U E` experience by
+    // moving the cat in a random direction and speed each time.
     dx = getRandomSpeed();
     dy = getRandomSpeed();
 }

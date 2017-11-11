@@ -23,13 +23,13 @@
 	font-size: 80%;
 }
 
-#rip {
+#spin {
 	padding: 20px 40px;
 	font-weight: bold;
 	font-size: 25px;
 }
 
-#letitrip {
+#makeitspin {
 	visibility: hidden;
 	position: absolute;
 	padding-top: 200px;
@@ -92,7 +92,7 @@ p {
 		width: 250px;
 	}
 
-	#letitrip {
+	#makeitspin {
 		padding-top: 100px;
 	}
 

@@ -1,0 +1,32 @@
+.menu {
+    font-weight: bold;
+    font-size: 300%;
+    width: 100%;
+    background-color: rgba(6,9,69,1);
+    color: white;
+    margin: 0px;   
+}
+
+#menu-title {
+    padding: 5px;
+}
+
+.blog-title {
+    font-size: 150%;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.blog-post {
+    margin: 0px;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+p {
+    margin: 0px;
+}
+
+html, body {
+    margin:0px;
+}

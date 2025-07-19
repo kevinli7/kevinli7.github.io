@@ -36,7 +36,7 @@ function initNavigationLinks() {
             const href = link.getAttribute('href');
             
             // Check if it's a "Work In Progress" page
-            if (href === 'our-story.html' || href === 'registry.html') {
+            if (href === 'registry.html') {
                 showWorkInProgress();
                 return;
             }
@@ -50,6 +50,12 @@ function initNavigationLinks() {
             // Handle RSVP page (allow normal navigation)
             if (href === 'rsvp.html') {
                 window.location.href = 'rsvp.html';
+                return;
+            }
+
+            // Handle RSVP page (allow normal navigation)
+            if (href === 'our-story.html') {
+                window.location.href = 'our-story.html';
                 return;
             }
             
@@ -161,6 +167,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initRSVPForm();
     initNavbarScroll();
     initParallax();
+    initSaveTheDateAnimation();
+    initHamburgerMenu();
     
     // Add loading animation
     document.body.style.opacity = '0';
@@ -169,6 +177,55 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.opacity = '1';
     }, 100);
 });
+
+// Hamburger Menu Functionality
+function initHamburgerMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+}
+
+// Save the Date Image Animation
+function initSaveTheDateAnimation() {
+    const saveTheDateImg = document.querySelector('.save-the-date-img');
+    
+    if (saveTheDateImg) {
+        // Start with image off-screen
+        saveTheDateImg.style.transform = 'translateY(100vh)';
+        saveTheDateImg.style.opacity = '0';
+        
+        // Trigger animation after a short delay
+        setTimeout(() => {
+            saveTheDateImg.style.transition = 'transform 1.5s ease-out, opacity 1.5s ease-out';
+            saveTheDateImg.style.transform = 'translateY(0)';
+            saveTheDateImg.style.opacity = '1';
+            saveTheDateImg.classList.add('loaded');
+        }, 500);
+    }
+}
 
 // Add some interactive effects
 document.addEventListener('DOMContentLoaded', () => {

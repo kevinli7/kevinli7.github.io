@@ -1,3 +1,42 @@
+/* CSS Variables */
+:root {
+    /* Primary Colors */
+    --primary-green: #4a6741;
+    /* --primary-green-light: #5c8051; */
+    --primary-green-light: #acb087;
+    /* --primary-green-lighter: #b6d4b6; */
+    --primary-green-dark: #3a5a31;
+
+    --decorative-font: 'Homemade Apple', cursive;
+    --information-font: 'Open Sans', sans-serif;
+    
+    /* Background Colors */
+    /* --bg-primary: #4a6741; */
+    --bg-secondary: #b6d4b6;
+    --bg-light: #f0f4f0;
+    --bg-white: #fff;
+    
+    /* Text Colors */
+    --text-primary: #333;
+    --text-secondary: #666;
+    --text-light: #888;
+    --text-white: #fff;
+    
+    /* Accent Colors */
+    --accent-pink: #f4b7d2;
+    --accent-pink-light: #f8c8d8;
+    
+    /* Border Colors */
+    --border-light: #e0e8e0;
+    --border-medium: #d0e0d0;
+    
+    /* Shadow Colors */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.2);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+    --shadow-green: rgba(74, 103, 65, 0.2);
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -6,10 +45,10 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--information-font);
     line-height: 1.6;
-    color: #333;
-    background-color: #5c8051; /* Darker sage green background */
+    color: var(--text-primary);
+    background-color: var(--primary-green-light);
     overflow-x: hidden;
 }
 
@@ -18,7 +57,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #b6d4b6;
+    background: var(--bg-secondary);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem 0;
@@ -35,10 +74,10 @@ body {
 }
 
 .nav-logo {
-    font-family: 'Homemade Apple', cursive;
+    font-family: var(--decorative-font);
     font-size: 1.5rem;
     font-weight: 700;
-    color: #5c8051;
+    color: var(--primary-green-light);
 }
 
 .nav-menu {
@@ -49,14 +88,14 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: #333;
+    color: var(--text-primary);
     font-weight: 400;
     transition: color 0.3s ease;
     position: relative;
 }
 
 .nav-link:hover {
-    color: #5c8051;
+    color: var(--primary-green-light);
 }
 
 .nav-link::after {
@@ -66,12 +105,45 @@ body {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #5c8051;
+    background-color: var(--primary-green-light);
     transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+.nav-link.hidden {
+    display: none;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-green-light);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /* Hero Section */
@@ -81,7 +153,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* background: linear-gradient(135deg, #5c8051 0%, #b6d4b6 100%); */
+    background: var(--primary-green-light);
     position: relative;
 }
 
@@ -93,6 +165,8 @@ body {
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .save-the-date-image {
@@ -109,8 +183,13 @@ body {
     max-height: 100%;
     object-fit: contain;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 1s ease-out;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    animation: slideUpFromBottom 1.5s ease-out;
+    transform: translateY(100vh);
+}
+
+.save-the-date-img.loaded {
+    transform: translateY(0);
 }
 
 .hero-content {
@@ -119,24 +198,24 @@ body {
 }
 
 .hero-title {
-    font-family: 'Homemade Apple', cursive;
+    font-family: var(--decorative-font);
     font-size: 4rem;
     font-weight: 700;
-    color: #5c8051;
+    color: var(--primary-green-light);
     margin-bottom: 1rem;
     animation: fadeInUp 1s ease-out;
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 0.5rem;
     animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .hero-date {
     font-size: 1.2rem;
-    color: #888;
+    color: var(--text-light);
     margin-bottom: 2rem;
     animation: fadeInUp 1s ease-out 0.4s both;
 }
@@ -155,15 +234,15 @@ body {
 .scroll-indicator span {
     display: block;
     font-size: 0.9rem;
-    color: #f4b7d2;
+    color: var(--accent-pink);
     margin-bottom: 0.5rem;
 }
 
 .scroll-arrow {
     width: 20px;
     height: 20px;
-    border-right: 2px solid #f4b7d2;
-    border-bottom: 2px solid #f4b7d2;
+    border-right: 2px solid var(--accent-pink);
+    border-bottom: 2px solid var(--accent-pink);
     transform: rotate(45deg);
     margin: 0 auto;
     animation: bounce 2s infinite;
@@ -189,6 +268,31 @@ body {
     transform: translateY(0);
 }
 
+.story-image {
+    max-width: 300px;
+    text-align: center;
+}
+
+.story-img {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.story-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.story-item.fade-in {
+    /* opacity: 1;
+    transform: translateY(0); */
+}
+
 .image-placeholder {
     width: 100%;
     height: 400px;
@@ -197,10 +301,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #5c8051;
+    color: var(--primary-green-light);;
     font-size: 1.2rem;
     font-weight: 600;
-    border: 2px dashed #5c8051;
+    border: 2px dashed var(--primary-green-light);
     transition: all 0.3s ease;
 }
 
@@ -226,8 +330,7 @@ body {
 /* Wedding Details Section */
 .wedding-details {
     padding: 4rem 2rem;
-    /* background: #5c8051; */
-    background: #5c8051;
+    background: var(--primary-green-light);
 }
 
 .details-container {
@@ -236,10 +339,10 @@ body {
 }
 
 .section-title {
-    font-family: 'Homemade Apple', cursive;
+    font-family: var(--decorative-font);
     font-size: 2.5rem;
     text-align: center;
-    color: #5c8051;
+    color: var(--primary-green-light);;
     margin-bottom: 3rem;
 }
 
@@ -271,9 +374,9 @@ body {
 }
 
 .detail-card h3 {
-    font-family: 'Homemade Apple', cursive;
+    font-family: var(--decorative-font);
     font-size: 1.5rem;
-    color: #5c8051;
+    color: var(--primary-green-light);;
     margin-bottom: 1rem;
 }
 
@@ -303,10 +406,10 @@ body {
 
 .tab-btn {
     padding: 1rem 2rem;
-    border: 2px solid #5c8051;
+    border: 2px solid var(--primary-green-light);;
     background: transparent;
-    color: #5c8051;
-    font-family: 'Homemade Apple', cursive;
+    color: var(--primary-green-light);;
+    font-family: var(--decorative-font);
     font-size: 1.1rem;
     cursor: pointer;
     border-radius: 30px;
@@ -315,7 +418,7 @@ body {
 
 .tab-btn:hover,
 .tab-btn.active {
-    background: #5c8051;
+    background: var(--primary-green-light);;
     color: #fff;
 }
 
@@ -334,9 +437,9 @@ body {
 }
 
 .tab-pane h2 {
-    font-family: 'Homemade Apple', cursive;
+    font-family: var(--decorative-font);
     font-size: 2rem;
-    color: #5c8051;
+    color: var(--primary-green-light);;
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -383,7 +486,7 @@ body {
 
 .registry-link {
     padding: 1rem 2rem;
-    background: #5c8051;
+    background: var(--primary-green-light);;
     color: #fff;
     text-decoration: none;
     border-radius: 30px;
@@ -428,7 +531,7 @@ body {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: #5c8051;
+    color: var(--primary-green-light);;
 }
 
 .form-group input,
@@ -446,7 +549,7 @@ body {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #5c8051;
+    border-color: var(--primary-green-light);;
 }
 
 .radio-group {
@@ -466,7 +569,7 @@ body {
 .submit-btn {
     width: 100%;
     padding: 1rem;
-    background: #5c8051;
+    background: var(--primary-green-light);;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -522,6 +625,22 @@ body {
     }
 }
 
+@keyframes slideUpFromBottom {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
 /* Page Hero Styles */
 .page-hero {
     height: 60vh;
@@ -529,15 +648,15 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #5c8051 0%, #b6d4b6 100%);
+    background: var(--primary-green-light);
     position: relative;
 }
 
 .page-title {
-    font-family: 'Homemade Apple', cursive;
+    font-family: var(--decorative-font);
     font-size: 3.5rem;
     font-weight: 700;
-    color: #5c8051;
+    color: var(--primary-green-light);;
     margin-bottom: 1rem;
     animation: fadeInUp 1s ease-out;
 }
@@ -550,7 +669,7 @@ body {
 
 /* Active Navigation Link */
 .nav-link.active {
-    color: #5c8051;
+    color: var(--primary-green-light);;
     font-weight: 600;
 }
 
@@ -571,8 +690,8 @@ body {
 
 .story-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 0.5fr 1fr;
+    gap: 2rem;
     align-items: center;
     margin-bottom: 4rem;
 }
@@ -586,9 +705,9 @@ body {
 }
 
 .story-section h2 {
-    font-family: 'Homemade Apple', cursive;
+    font-family: var(--decorative-font);
     font-size: 2rem;
-    color: #5c8051;
+    color: var(--primary-green-light);;
     margin-bottom: 1.5rem;
 }
 
@@ -616,9 +735,9 @@ body {
 }
 
 .registry-intro h2 {
-    font-family: 'Homemade Apple', cursive;
+    font-family: var(--decorative-font);
     font-size: 2.5rem;
-    color: #5c8051;
+    color: var(--primary-green-light);;
     margin-bottom: 1.5rem;
 }
 
@@ -647,7 +766,7 @@ body {
 .registry-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(74, 103, 65, 0.2);
-    border-color: #5c8051;
+    border-color: var(--primary-green-light);;
 }
 
 .registry-icon {
@@ -656,9 +775,9 @@ body {
 }
 
 .registry-card h3 {
-    font-family: 'Homemade Apple', cursive;
+    font-family: var(--decorative-font);
     font-size: 1.5rem;
-    color: #5c8051;
+    color: var(--primary-green-light);;
     margin-bottom: 1rem;
 }
 
@@ -668,17 +787,17 @@ body {
 }
 
 .registry-note {
-    background: #5c8051;
+    background: var(--primary-green-light);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    border-left: 4px solid #5c8051;
+    border-left: 4px solid var(--primary-green-light);
 }
 
 .registry-note h3 {
-    font-family: 'Homemade Apple', cursive;
+    font-family: var(--decorative-font);
     font-size: 1.5rem;
-    color: #5c8051;
+    color: var(--primary-green-light);;
     margin-bottom: 1rem;
 }
 
@@ -701,6 +820,14 @@ body {
     background-attachment: fixed;
 }
 
+/* RSVP Hero with Background Image */
+.our-story-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/story.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .rsvp-hero .page-title,
 .rsvp-hero .page-subtitle {
     color: #fff;
@@ -710,7 +837,7 @@ body {
 /* Google Forms Section */
 .rsvp-form-section {
     padding: 4rem 2rem;
-    background: #5c8051;
+    background: var(--primary-green-light);
 }
 
 .form-container {
@@ -718,7 +845,7 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    background: #5c8051;
+    background: var(--primary-green-light);
 }
 
 .google-form {
@@ -738,9 +865,9 @@ body {
 }
 
 .rsvp-intro h2 {
-    font-family: 'Homemade Apple', cursive;
+    font-family: var(--decorative-font);
     font-size: 2.5rem;
-    color: #5c8051;
+    color: var(--primary-green-light);;
     margin-bottom: 1.5rem;
 }
 
@@ -769,9 +896,9 @@ body {
 }
 
 .form-section h3 {
-    font-family: 'Homemade Apple', cursive;
+    font-family: var(--decorative-font);
     font-size: 1.3rem;
-    color: #5c8051;
+    color: var(--primary-green-light);;
     margin-bottom: 1rem;
 }
 
@@ -790,7 +917,7 @@ body {
 .radio-custom {
     width: 20px;
     height: 20px;
-    border: 2px solid #5c8051;
+    border: 2px solid var(--primary-green-light);
     border-radius: 50%;
     position: relative;
     transition: all 0.3s ease;
@@ -804,7 +931,7 @@ body {
     transform: translate(-50%, -50%);
     width: 10px;
     height: 10px;
-    background: #5c8051;
+    background: var(--primary-green-light);
     border-radius: 50%;
 }
 
@@ -814,16 +941,16 @@ body {
 }
 
 .rsvp-note {
-    background: #5c8051;
+    background: var(--primary-green-light);
     padding: 2rem;
     border-radius: 15px;
-    border-left: 4px solid #5c8051;
+    border-left: 4px solid var(--primary-green-light);
 }
 
 .rsvp-note h3 {
-    font-family: 'Homemade Apple', cursive;
+    font-family: var(--decorative-font);
     font-size: 1.3rem;
-    color: #5c8051;
+    color: var(--primary-green-light);;
     margin-bottom: 1rem;
 }
 
@@ -843,13 +970,37 @@ body {
     content: '♥';
     position: absolute;
     left: 0;
-    color: #5c8051;
+    color: var(--primary-green-light);;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
     .nav-menu {
-        display: none;
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        flex-direction: column;
+        background-color: var(--bg-secondary);
+        width: 100%;
+        text-align: center;
+        transition: 0.6s ease-in-out;
+        box-shadow: 0 10px 27px var(--shadow-light);
+        padding: 2rem 0;
+        gap: 1rem;
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        top: 70px;
+        display: flex;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
     }
     
     .hero-title {
@@ -950,7 +1101,7 @@ body {
 }
 
 .wip-popup h3 {
-    font-family: 'Homemade Apple', cursive;
+    font-family: var(--decorative-font);
     font-size: 1.8rem;
     color: #4a6741;
     margin-bottom: 1rem;

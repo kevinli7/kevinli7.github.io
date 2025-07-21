@@ -373,3 +373,13 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style); 
+
+// Play audio when 'love' in footer is clicked
+const footerLove = document.getElementById('footer-love');
+const footerLoveAudio = document.getElementById('footer-love-audio');
+if (footerLove && footerLoveAudio) {
+    footerLove.addEventListener('click', () => {
+        footerLoveAudio.currentTime = 0;
+        footerLoveAudio.play();
+    });
+} 

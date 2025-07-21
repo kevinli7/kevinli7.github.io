@@ -1298,3 +1298,36 @@ body {
 .gallery {
     position: relative;
 }
+
+/* Metallic pulsing effect for footer 'love' */
+#footer-love {
+  display: inline-block;
+  font-weight: bold;
+  background: linear-gradient(120deg, #bfc1c2 10%, #e6e7e8 30%, #a7a9ac 50%, #e6e7e8 70%, #bfc1c2 90%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: metallic-pulse 2s infinite, metallic-shine 3s linear infinite;
+}
+
+@keyframes metallic-pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.12);
+    filter: brightness(1.4);
+  }
+}
+
+@keyframes metallic-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}

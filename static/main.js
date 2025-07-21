@@ -170,7 +170,7 @@ function initGalleryCarousel() {
     function getSpeed() {
         if (window.innerWidth < 600) return 0.5;      // Slowest on mobile
         if (window.innerWidth < 900) return 1.25;     // Medium on tablet
-        return 1.5;                                   // Fastest on desktop
+        return 2;                                   // Fastest on desktop
     }
     let speed = getSpeed();
 
@@ -179,8 +179,20 @@ function initGalleryCarousel() {
         speed = getSpeed();
     });
 
-    // Duplicate images for seamless looping
+    // Shuffle images before duplicating
     const images = Array.from(track.children);
+    // Fisher-Yates shuffle
+    for (let i = images.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [images[i], images[j]] = [images[j], images[i]];
+    }
+    // Remove all children and re-append in shuffled order
+    while (track.firstChild) {
+        track.removeChild(track.firstChild);
+    }
+    images.forEach(img => track.appendChild(img));
+
+    // Duplicate images for seamless looping
     images.forEach(img => {
         const clone = img.cloneNode(true);
         track.appendChild(clone);

@@ -158,6 +158,7 @@ body {
 }
 
 .save-the-date-container {
+    margin-top: 5rem;
     max-width: 100%;
     height: 100%;
     display: flex;
@@ -251,8 +252,55 @@ body {
 
 /* Gallery Section */
 .gallery {
-    padding: 4rem 2rem;
-    /* background: #fff; */
+    padding: 0rem 2rem 2rem 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-track {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* gap: 2rem; */
+    width: max-content;
+    will-change: transform;
+    /* transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+    width: 50vw;
+    height: 400px;
+    object-fit: cover;
+    /* border-radius: 15px; */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    /* transition: transform 0.3s, box-shadow 0.3s; */
+}
+
+/* .gallery-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+} */
+
+/* Hide scrollbars for the gallery */
+.gallery-track::-webkit-scrollbar {
+    display: none;
+}
+.gallery-track {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media (max-width: 900px) {
+    .gallery-image {
+        width: 50vw;
+        height: 250px;
+    }
+    .gallery-track {
+        /* gap: 1rem; */
+    }
 }
 
 .gallery-item {
@@ -313,23 +361,9 @@ body {
     box-shadow: 0 10px 30px rgba(74, 103, 65, 0.2);
 }
 
-.gallery-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.gallery-image:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
 /* Wedding Details Section */
 .wedding-details {
-    padding: 4rem 2rem;
+    padding: 0 2rem;
     background: var(--primary-green-light);
 }
 

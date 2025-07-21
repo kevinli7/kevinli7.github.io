@@ -151,7 +151,7 @@ function initParallax() {
     
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
+        const rate = scrolled * -0.25;
         
         if (hero) {
             hero.style.transform = `translateY(${rate}px)`;
@@ -159,9 +159,48 @@ function initParallax() {
     });
 }
 
+// Carousel Auto-Scroll
+function initGalleryCarousel() {
+    const track = document.querySelector('.gallery-track');
+    if (!track) return;
+    let scrollAmount = 0;
+    // const speed = 2; // pixels per frame
+
+    // Function to determine speed based on window width
+    function getSpeed() {
+        if (window.innerWidth < 600) return 0.5;      // Slowest on mobile
+        if (window.innerWidth < 900) return 1.25;     // Medium on tablet
+        return 1.5;                                     // Fastest on desktop
+    }
+    let speed = getSpeed();
+
+    // Update speed on resize
+    window.addEventListener('resize', () => {
+        speed = getSpeed();
+    });
+
+    // Duplicate images for seamless looping
+    const images = Array.from(track.children);
+    images.forEach(img => {
+        const clone = img.cloneNode(true);
+        track.appendChild(clone);
+    });
+
+    function animate() {
+        scrollAmount += speed;
+        if (scrollAmount >= track.scrollWidth / 2) {
+            scrollAmount = 0;
+        }
+        track.style.transform = `translateX(${-scrollAmount}px)`;
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    handleScrollAnimations();
+    // handleScrollAnimations();
     initTabs();
     initNavigationLinks();
     initRSVPForm();
@@ -169,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParallax();
     initSaveTheDateAnimation();
     initHamburgerMenu();
-    
+    initGalleryCarousel(); // <-- Add this line
     // Add loading animation
     document.body.style.opacity = '0';
     setTimeout(() => {

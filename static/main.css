@@ -37,6 +37,7 @@
     --shadow-medium: rgba(0, 0, 0, 0.2);
     --shadow-dark: rgba(0, 0, 0, 0.3);
     --shadow-green: rgba(74, 103, 65, 0.2);
+    --navbar-height: 64px;
 }
 
 /* Reset and Base Styles */
@@ -64,6 +65,7 @@ body {
     z-index: 1000;
     padding: 1rem 0;
     transition: all 0.3s ease;
+    height: var(--navbar-height);
 }
 
 .nav-container {
@@ -160,6 +162,7 @@ body {
     background: var(--primary-green-light);
     position: relative;
     z-index: 1;
+    padding-top: var(--navbar-height);
 }
 
 .save-the-date-container {

@@ -159,6 +159,7 @@ body {
     text-align: center;
     background: var(--primary-green-light);
     position: relative;
+    z-index: 1;
 }
 
 .save-the-date-container {
@@ -262,7 +263,8 @@ body {
     overflow: hidden;
     position: relative;
     box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-    background: var(--primary-green-dark)
+    background: var(--primary-green-dark);
+    z-index: 10;
 }
 
 .gallery-track {
@@ -1225,4 +1227,65 @@ body {
         text-shadow: 0 0 8px #fff8;
         transform: scale(1);
     }
+}
+
+.carousel-speed-btn {
+    position: absolute;
+    top: 8px;
+    right: 6px;
+    z-index: 10;
+    background: rgba(255,255,255,0.85);
+    border: none;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-size: 1.2em;
+    transition: background 0.2s;
+    opacity: 0.5;
+}
+.carousel-speed-btn:hover {
+    background: #f4b7d2;
+}
+
+.carousel-speed-slider-container {
+    position: absolute;
+    top: 52px;
+    right: 18px;
+    z-index: 11;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+    padding: 10px 16px 8px 16px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    min-width: 140px;
+    animation: fadeIn 0.3s;
+}
+.carousel-speed-slider-container.active {
+    display: flex;
+}
+.carousel-speed-label {
+    font-size: 0.95em;
+    margin-bottom: 4px;
+    color: #5c8051;
+}
+.carousel-speed-slider {
+    width: 100px;
+    margin: 0 8px;
+}
+.carousel-speed-value {
+    font-size: 1em;
+    margin-top: 2px;
+    color: #4a6741;
+    font-weight: bold;
+}
+
+.gallery {
+    position: relative;
 }

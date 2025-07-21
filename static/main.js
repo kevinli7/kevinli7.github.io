@@ -166,18 +166,51 @@ function initGalleryCarousel() {
     let scrollAmount = 0;
     // const speed = 2; // pixels per frame
 
-    // Function to determine speed based on window width
     function getSpeed() {
         if (window.innerWidth < 600) return 0.5;      // Slowest on mobile
         if (window.innerWidth < 900) return 1.25;     // Medium on tablet
         return 2;                                   // Fastest on desktop
     }
-    let speed = getSpeed();
 
-    // Update speed on resize
-    window.addEventListener('resize', () => {
-        speed = getSpeed();
-    });
+    // Speed control
+    let speed = getSpeed();
+    const speedSlider = document.getElementById('carousel-speed-slider');
+    const speedValue = document.querySelector('.carousel-speed-value');
+    if (speedSlider && speedValue) {
+        speedSlider.value = speed;
+        speedValue.textContent = speed;
+        speedSlider.addEventListener('input', () => {
+            speed = parseFloat(speedSlider.value);
+            speedValue.textContent = speed;
+        });
+    }
+
+    // Show/hide slider
+    const speedBtn = document.querySelector('.carousel-speed-btn');
+    const sliderContainer = document.querySelector('.carousel-speed-slider-container');
+    if (speedBtn && sliderContainer) {
+        speedBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            sliderContainer.classList.toggle('active');
+        });
+        document.addEventListener('click', (e) => {
+            if (!sliderContainer.contains(e.target) && !speedBtn.contains(e.target)) {
+                sliderContainer.classList.remove('active');
+            }
+        });
+    }
+
+    // Function to determine speed based on window width (overridden by slider)
+    // function getSpeed() {
+    //     if (window.innerWidth < 600) return 0.5;      // Slowest on mobile
+    //     if (window.innerWidth < 900) return 1.25;     // Medium on tablet
+    //     return 2;                                   // Fastest on desktop
+    // }
+    // let speed = getSpeed();
+
+    // window.addEventListener('resize', () => {
+    //     speed = getSpeed();
+    // });
 
     // Shuffle images before duplicating
     const images = Array.from(track.children);

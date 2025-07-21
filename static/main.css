@@ -1,18 +1,20 @@
 /* CSS Variables */
 :root {
     /* Primary Colors */
-    --primary-green: #4a6741;
-    /* --primary-green-light: #5c8051; */
-    --primary-green-light: #acb087;
+    --primary-green: #949e6c;
+    --primary-green-light: #f9fdea;
+    /* --primary-green-light: #acb087; */
     /* --primary-green-lighter: #b6d4b6; */
-    --primary-green-dark: #3a5a31;
+    --primary-green-dark: #949e6c;
 
     --decorative-font: 'Homemade Apple', cursive;
-    --information-font: 'Open Sans', sans-serif;
+    --information-font: 'Courier Prime', monospace;
     
     /* Background Colors */
     /* --bg-primary: #4a6741; */
-    --bg-secondary: #b6d4b6;
+    --bg-secondary: #949e6c;
+    /* --bg-secondary-light: rgb(100, 109, 75); */
+    --bg-secondary-light: #949e6c;
     --bg-light: #f0f4f0;
     --bg-white: #fff;
     
@@ -57,7 +59,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: var(--bg-secondary);
+    background: var(--bg-secondary-light);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem 0;
@@ -88,7 +90,7 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-primary);
+    color: #ffffff;
     font-weight: 400;
     transition: color 0.3s ease;
     position: relative;
@@ -158,35 +160,38 @@ body {
 }
 
 .save-the-date-container {
-    margin-top: 5rem;
-    max-width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+    margin-top: 15rem;
+    margin-bottom: 15rem;
     position: relative;
-    z-index: 2;
+    display: inline-block;
+    width: 80vw;
+    max-width: 500px;
 }
 
-.save-the-date-image {
-    max-width: 90%;
-    max-height: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
+.save-the-date-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60vw;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 2.5s ease;
+    overflow: visible;
+}
+
+.save-the-date-bg.fade-in {
+    opacity: 1;
 }
 
 .save-the-date-img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px var(--shadow-light);
-    animation: slideUpFromBottom 1.5s ease-out;
-    transform: translateY(100vh);
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    display: block;
 }
 
 .save-the-date-img.loaded {
@@ -395,7 +400,7 @@ body {
 }
 
 .detail-card {
-    background: #b6d4b6;
+    background: var(--bg-secondary);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -416,7 +421,7 @@ body {
 
 .detail-card p {
     margin-bottom: 0.5rem;
-    color: #666;
+    color: white;
 }
 
 /* Tabbed Content */
@@ -619,8 +624,8 @@ body {
 
 /* Footer */
 .footer {
-    background: #b6d4b6;
-    color: #000000;
+    background: var(--bg-secondary);
+    color: #ffffff;
     text-align: center;
     padding: 2rem;
     margin-top: 2rem;
@@ -690,14 +695,14 @@ body {
     font-family: var(--decorative-font);
     font-size: 3.5rem;
     font-weight: 700;
-    color: var(--primary-green-light);;
+    color: var(--primary-green-dark);;
     margin-bottom: 1rem;
     animation: fadeInUp 1s ease-out;
 }
 
 .page-subtitle {
     font-size: 1.3rem;
-    color: #666;
+    color: #ffffff;
     animation: fadeInUp 1s ease-out 0.2s both;
 }
 
@@ -714,7 +719,6 @@ body {
 /* Our Story Page Styles */
 .story-page {
     padding: 4rem 2rem;
-    background: #fff;
 }
 
 .story-container {
@@ -741,7 +745,7 @@ body {
 .story-section h2 {
     font-family: var(--decorative-font);
     font-size: 2rem;
-    color: var(--primary-green-light);;
+    color: var(--primary-green-dark);
     margin-bottom: 1.5rem;
 }
 
@@ -1050,6 +1054,8 @@ body {
     }
     
     .save-the-date-container {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
         padding: 1rem;
     }
     
@@ -1057,7 +1063,10 @@ body {
         max-width: 95%;
         max-height: 70%;
     }
-    
+    .save-the-date-bg {
+        width: 100vw;
+    }
+
     .save-the-date-img {
         border-radius: 10px;
     }

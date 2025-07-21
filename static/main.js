@@ -133,14 +133,14 @@ function initNavbarScroll() {
     const navLogo = document.querySelector('.nav-logo');
     
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            navbar.style.background = '#5c8051';
+        if (window.scrollY > 500) {
+            // navbar.style.background = '#5c8051';
             navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
             navLogo.style.color = '#f4b7d2';
         } else {
-            navbar.style.background = '#b6d4b6';
+            // navbar.style.background = '#5c8051';
             navbar.style.boxShadow = 'none';
-            navLogo.style.color = '#5c8051';
+            navLogo.style.color = '#ffffff';
         }
     });
 }
@@ -170,7 +170,7 @@ function initGalleryCarousel() {
     function getSpeed() {
         if (window.innerWidth < 600) return 0.5;      // Slowest on mobile
         if (window.innerWidth < 900) return 1.25;     // Medium on tablet
-        return 1.5;                                     // Fastest on desktop
+        return 1.5;                                   // Fastest on desktop
     }
     let speed = getSpeed();
 
@@ -215,6 +215,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.transition = 'opacity 0.5s ease';
         document.body.style.opacity = '1';
     }, 100);
+
+    // Fade in save-the-date background image
+    const saveTheDateBg = document.querySelector('.save-the-date-bg');
+    if (saveTheDateBg) {
+        setTimeout(() => {
+            saveTheDateBg.classList.add('fade-in');
+        }, 2000); // 2 second delay for effect
+    }
 });
 
 // Hamburger Menu Functionality

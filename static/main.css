@@ -774,6 +774,147 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Info Page Styles */
+.info-page {
+    padding: 4rem 2rem;
+    padding-top: calc(var(--navbar-height) + 2rem);
+    background: var(--primary-green-light);
+}
+
+.info-page .details-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.info-section {
+    margin-bottom: 4rem;
+}
+
+.info-section:last-child {
+    margin-bottom: 0;
+}
+
+.info-page .section-title {
+    font-family: var(--decorative-font);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: left;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+.info-content {
+    margin-left: 0;
+}
+
+.info-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.timeline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-list li {
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-medium);
+    color: var(--text-primary);
+}
+
+.timeline-list li:last-child {
+    border-bottom: none;
+}
+
+.faq-item {
+    margin-bottom: 2rem;
+}
+
+.faq-item:last-child {
+    margin-bottom: 0;
+}
+
+.faq-question {
+    font-family: var(--information-font);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.faq-answer {
+    margin-bottom: 0;
+    color: var(--text-secondary);
+}
+
+/* Theme Section */
+.theme-image {
+    margin-bottom: 1.5rem;
+}
+
+.theme-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.theme-intro {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.theme-sub {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.theme-details {
+    margin: 0;
+}
+
+.theme-details dt {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.theme-details dt:first-child {
+    margin-top: 0;
+}
+
+.theme-details dd {
+    margin: 0 0 0 1rem;
+    color: var(--text-secondary);
+}
+
+.info-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/info.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.info-hero .page-title {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.info-hero .page-subtitle {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 /* Registry Page Styles */
 .registry-page {
     padding: 4rem 2rem;

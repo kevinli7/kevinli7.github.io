@@ -46,6 +46,12 @@ function initNavigationLinks() {
                 window.location.href = 'index.html';
                 return;
             }
+
+            // Handle RSVP page (allow normal navigation)
+            if (href === 'info.html') {
+                window.location.href = 'info.html';
+                return;
+            }
             
             // Handle RSVP page (allow normal navigation)
             if (href === 'rsvp.html') {

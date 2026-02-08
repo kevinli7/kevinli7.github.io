@@ -282,6 +282,11 @@ function setupAntiCheat() {
 }
 
 function handleKeyDown(e) {
+    if (e.code === 'KeyR') {
+        e.preventDefault();
+        restartGame();
+        return;
+    }
     if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'Space', 'KeyA', 'KeyD', 'KeyW'].includes(e.code)) {
         e.preventDefault();
     }
@@ -394,10 +399,14 @@ function updatePlayer() {
         }
     });
 
-    if (gameState.player.x < GOAL_X + 80 &&
-        gameState.player.x + 30 > GOAL_X &&
-        gameState.player.y < GROUND_Y - 40 + 80 &&
-        gameState.player.y + 40 > GROUND_Y - 40) {
+    const endPlatformX = GOAL_X - 50;
+    const endPlatformW = 200;
+    const endPlatformY = GROUND_Y - 40;
+    const endPlatformH = 80;
+    if (gameState.player.x + 30 > endPlatformX &&
+        gameState.player.x < endPlatformX + endPlatformW &&
+        gameState.player.y + 40 >= endPlatformY &&
+        gameState.player.y < endPlatformY + endPlatformH) {
         completeGame();
     }
 

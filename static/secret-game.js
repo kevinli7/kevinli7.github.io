@@ -70,10 +70,10 @@ function createPlatforms() {
     const platformData = [
         { x: 0, y: GROUND_Y, width: 400, height: 80 },
         { x: 500, y: GROUND_Y, width: 180, height: 80 },
-        { x: 780, y: GROUND_Y - 60, width: 160, height: 80 },
+        { x: 780, y: GROUND_Y - 160, width: 160, height: 80 },
         { x: 1060, y: GROUND_Y, width: 180, height: 80 },
         { x: 1340, y: GROUND_Y - 80, width: 140, height: 80 },
-        { x: 1580, y: GROUND_Y, width: 220, height: 80 },
+        { x: 1630, y: GROUND_Y, width: 170, height: 80 },
         { x: 1900, y: GROUND_Y - 40, width: 180, height: 80 },
         { x: 2180, y: GROUND_Y, width: 200, height: 80 },
         { x: 2500, y: GROUND_Y - 100, width: 160, height: 80 },
@@ -132,8 +132,8 @@ function createSpikes() {
 function createObstacles() {
     const world = document.querySelector('.game-world');
     const obstacleData = [
-        { x: 600, y: GROUND_Y - 100, width: 40, height: 40, pattern: 'horizontal', range: 120, speed: 1.8 },
-        { x: 900, y: GROUND_Y - 140, width: 35, height: 35, pattern: 'vertical', range: 60, speed: 2 },
+        { x: 600, y: GROUND_Y - 100, width: 40, height: 40, pattern: 'horizontal', range: 110, speed: 1.8 },
+        { x: 900, y: GROUND_Y - 240, width: 35, height: 35, pattern: 'vertical', range: 60, speed: 2 },
         { x: 1280, y: GROUND_Y - 120, width: 45, height: 30, pattern: 'horizontal', range: 100, speed: 2.2 },
         { x: 1720, y: GROUND_Y - 140, width: 40, height: 40, pattern: 'vertical', range: 100, speed: 4 },
         { x: 2090, y: GROUND_Y - 80, width: 50, height: 25, pattern: 'horizontal', range: 130, speed: 1.9 },
@@ -170,6 +170,8 @@ function createObstacles() {
 function createPowerUps() {
     const world = document.querySelector('.game-world');
     const powerupData = [
+        { x: 800, y: GROUND_Y - 30 },
+        { x: 900, y: GROUND_Y - 30 },
         { x: 1350, y: GROUND_Y - 200 },
         { x: 1680, y: GROUND_Y - 220 },
         { x: 2880, y: GROUND_Y - 150 },
@@ -343,21 +345,57 @@ function updatePlayer() {
     }
 
     gameState.player.vy += GRAVITY;
+    const prevX = gameState.player.x;
+    const prevY = gameState.player.y;
     gameState.player.x += gameState.player.vx;
     gameState.player.y += gameState.player.vy;
 
     gameState.player.onGround = false;
+    const pw = 30;
+    const ph = 40;
     gameState.platforms.forEach(platform => {
-        if (gameState.player.x < platform.x + platform.width &&
-            gameState.player.x + 30 > platform.x &&
-            gameState.player.y + 40 >= platform.y &&
-            gameState.player.y + 40 <= platform.y + platform.height + 5) {
-            gameState.player.y = platform.y - 40;
+        const overlap =
+            gameState.player.x < platform.x + platform.width &&
+            gameState.player.x + pw > platform.x &&
+            gameState.player.y < platform.y + platform.height &&
+            gameState.player.y + ph > platform.y;
+        if (!overlap) return;
+
+        const prevBottom = prevY + ph;
+        const prevTop = prevY;
+        const platTop = platform.y;
+        const platBottom = platform.y + platform.height;
+        const prevLeft = prevX;
+        const prevRight = prevX + pw;
+        const platLeft = platform.x;
+        const platRight = platform.x + platform.width;
+
+        if (prevBottom <= platTop + 8 && gameState.player.vy >= 0) {
+            gameState.player.y = platTop - ph;
             gameState.player.vy = 0;
             gameState.player.onGround = true;
             gameState.player.jumpsLeft = 2;
+            return;
+        }
+        if (prevTop >= platBottom - 8 && gameState.player.vy <= 0) {
+            gameState.player.y = platBottom;
+            gameState.player.vy = 0;
+        }
+        if (prevRight <= platLeft + 8 && gameState.player.vx > 0) {
+            gameState.player.x = platLeft - pw;
+            gameState.player.vx = 0;
+            return;
+        }
+        if (prevLeft >= platRight - 8 && gameState.player.vx < 0) {
+            gameState.player.x = platRight;
+            gameState.player.vx = 0;
+            return;
         }
     });
+
+    if (!gameState.player.onGround && gameState.player.jumpsLeft > 1) {
+        gameState.player.jumpsLeft = 1;
+    }
 
     gameState.spikes.forEach(spike => {
         if (gameState.player.x < spike.x + 20 &&

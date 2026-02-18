@@ -10,9 +10,9 @@ const GROUND_Y = 520;
 const GOAL_X = 6950;
 
 // Physics / feel (lower = slower, easier to react)
-const PLAYER_RUN_SPEED = 3.5;
-const PLAYER_JUMP_STRENGTH = 10;
-const GRAVITY = 0.45;
+const PLAYER_RUN_SPEED = 3;
+const PLAYER_JUMP_STRENGTH = 7;
+const GRAVITY = 0.25;
 const OBSTACLE_SPEED_FACTOR = 0.03;
 const POWERUP_RESPAWN_MS = 5000;
 
@@ -70,7 +70,7 @@ function createPlatforms() {
     const platformData = [
         { x: 0, y: GROUND_Y, width: 400, height: 80 },
         { x: 500, y: GROUND_Y, width: 180, height: 80 },
-        { x: 780, y: GROUND_Y - 160, width: 160, height: 80 },
+        { x: 780, y: GROUND_Y - 160, width: 160, height: 60 },
         { x: 1060, y: GROUND_Y, width: 180, height: 80 },
         { x: 1340, y: GROUND_Y - 80, width: 140, height: 80 },
         { x: 1630, y: GROUND_Y, width: 170, height: 80 },
@@ -132,7 +132,7 @@ function createSpikes() {
 function createObstacles() {
     const world = document.querySelector('.game-world');
     const obstacleData = [
-        { x: 600, y: GROUND_Y - 100, width: 40, height: 40, pattern: 'horizontal', range: 110, speed: 1.8 },
+        { x: 600, y: GROUND_Y - 100, width: 40, height: 40, pattern: 'horizontal', range: 120, speed: 1.8 },
         { x: 900, y: GROUND_Y - 240, width: 35, height: 35, pattern: 'vertical', range: 60, speed: 2 },
         { x: 1280, y: GROUND_Y - 120, width: 45, height: 30, pattern: 'horizontal', range: 100, speed: 2.2 },
         { x: 1720, y: GROUND_Y - 140, width: 40, height: 40, pattern: 'vertical', range: 100, speed: 4 },

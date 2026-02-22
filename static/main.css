@@ -950,6 +950,15 @@ body {
     margin-bottom: 1rem;
 }
 
+.registry-cat p {
+    font-size: 5rem;
+    text-decoration: none;
+}
+
+.registry-cat a {
+    text-decoration: none;
+}
+
 .registry-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

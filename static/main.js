@@ -37,7 +37,8 @@ function initNavigationLinks() {
             
             // Check if it's a "Work In Progress" page
             if (href === 'registry.html') {
-                showWorkInProgress();
+                // showWorkInProgress();
+                window.location.href = 'registry.html';
                 return;
             }
             

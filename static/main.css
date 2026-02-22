@@ -918,7 +918,14 @@ body {
 /* Registry Page Styles */
 .registry-page {
     padding: 4rem 2rem;
-    background: #fff;
+    background: var(--primary-green-light);
+}
+
+.registry-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/registry.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .registry-container {
@@ -934,7 +941,6 @@ body {
 .registry-intro h2 {
     font-family: var(--decorative-font);
     font-size: 2.5rem;
-    color: var(--primary-green-light);;
     margin-bottom: 1.5rem;
 }
 

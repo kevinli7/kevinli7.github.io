@@ -35,20 +35,13 @@ function initNavigationLinks() {
             e.preventDefault();
             const href = link.getAttribute('href');
             
-            // Check if it's a "Work In Progress" page
-            if (href === 'registry.html') {
-                // showWorkInProgress();
-                window.location.href = 'registry.html';
-                return;
-            }
-            
             // Handle smooth scrolling for home page links
             if (href === 'index.html') {
                 window.location.href = 'index.html';
                 return;
             }
 
-            // Handle RSVP page (allow normal navigation)
+            // Handle info page (allow normal navigation)
             if (href === 'info.html') {
                 window.location.href = 'info.html';
                 return;
@@ -57,6 +50,12 @@ function initNavigationLinks() {
             // Handle RSVP page (allow normal navigation)
             if (href === 'rsvp.html') {
                 window.location.href = 'rsvp.html';
+                return;
+            }
+
+            // Handle registry page (allow normal navigation)
+            if (href === 'registry.html') {
+                window.location.href = 'registry.html';
                 return;
             }
 

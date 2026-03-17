@@ -260,6 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSaveTheDateAnimation();
     initHamburgerMenu();
     initGalleryCarousel(); // <-- Add this line
+    initThemeToggle();
     // Add loading animation
     document.body.style.opacity = '0';
     setTimeout(() => {
@@ -323,6 +324,20 @@ function initSaveTheDateAnimation() {
             saveTheDateImg.classList.add('loaded');
         }, 500);
     }
+}
+
+// Theme outfit inspo toggle
+function initThemeToggle() {
+    const toggleBtn = document.querySelector('.theme-toggle-btn');
+    const outfitSection = document.getElementById('theme-outfit');
+
+    if (!toggleBtn || !outfitSection) return;
+
+    toggleBtn.addEventListener('click', () => {
+        const isHidden = outfitSection.style.display === 'none' || outfitSection.style.display === '';
+        outfitSection.style.display = isHidden ? 'block' : 'none';
+        toggleBtn.textContent = isHidden ? 'Hide outfit inspo' : 'Show outfit inspo';
+    });
 }
 
 // Add some interactive effects

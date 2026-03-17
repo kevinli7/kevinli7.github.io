@@ -205,6 +205,13 @@ function createClouds() {
 
 // --- Input ---
 
+// Track current directional input so movement stays responsive
+// even when multiple keys are pressed or collision temporarily zeroes velocity.
+let inputState = {
+    left: false,
+    right: false
+};
+
 function setupEventListeners() {
     document.addEventListener('keydown', handleKeyDown);
     document.addEventListener('keyup', handleKeyUp);
@@ -216,23 +223,25 @@ function setupEventListeners() {
         leftBtn.addEventListener('touchstart', function (e) {
             e.preventDefault();
             if (gameState.isGameOver || gameState.isCompleted) return;
-            gameState.player.vx = -PLAYER_RUN_SPEED;
-                    leftBtn.classList.add('active');
-                });
-                leftBtn.addEventListener('touchend', function (e) {
-                    e.preventDefault();
-                    gameState.player.vx = 0;
-                    leftBtn.classList.remove('active');
-                });
-                rightBtn.addEventListener('touchstart', function (e) {
-                    e.preventDefault();
-                    if (gameState.isGameOver || gameState.isCompleted) return;
-                    gameState.player.vx = PLAYER_RUN_SPEED;
+            inputState.left = true;
+            inputState.right = false;
+            leftBtn.classList.add('active');
+        });
+        leftBtn.addEventListener('touchend', function (e) {
+            e.preventDefault();
+            inputState.left = false;
+            leftBtn.classList.remove('active');
+        });
+        rightBtn.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+            if (gameState.isGameOver || gameState.isCompleted) return;
+            inputState.right = true;
+            inputState.left = false;
             rightBtn.classList.add('active');
         });
         rightBtn.addEventListener('touchend', function (e) {
             e.preventDefault();
-            gameState.player.vx = 0;
+            inputState.right = false;
             rightBtn.classList.remove('active');
         });
         jumpBtn.addEventListener('touchstart', function (e) {
@@ -297,11 +306,13 @@ function handleKeyDown(e) {
     switch (e.code) {
         case 'ArrowLeft':
         case 'KeyA':
-            gameState.player.vx = -PLAYER_RUN_SPEED;
+            inputState.left = true;
+            inputState.right = false;
             break;
         case 'ArrowRight':
         case 'KeyD':
-            gameState.player.vx = PLAYER_RUN_SPEED;
+            inputState.right = true;
+            inputState.left = false;
             break;
         case 'Space':
         case 'ArrowUp':
@@ -319,9 +330,11 @@ function handleKeyUp(e) {
     switch (e.code) {
         case 'ArrowLeft':
         case 'KeyA':
+            inputState.left = false;
+            break;
         case 'ArrowRight':
         case 'KeyD':
-            gameState.player.vx = 0;
+            inputState.right = false;
             break;
     }
 }
@@ -343,6 +356,17 @@ function updatePlayer() {
     if (avgSpeed > 20) {
         cheatDetection.speedHacks = true;
     }
+
+    // Apply gravity and horizontal input.
+    // Horizontal velocity is derived from current input state so movement
+    // remains responsive in the air and after collisions.
+    let targetVx = 0;
+    if (inputState.left && !inputState.right) {
+        targetVx = -PLAYER_RUN_SPEED;
+    } else if (inputState.right && !inputState.left) {
+        targetVx = PLAYER_RUN_SPEED;
+    }
+    gameState.player.vx = targetVx;
 
     gameState.player.vy += GRAVITY;
     const prevX = gameState.player.x;
@@ -535,13 +559,13 @@ function gameOver() {
 
 function completeGame() {
     gameState.isCompleted = true;
-    let secretWord = '';
-    if (cheatDetection.consoleOpened || cheatDetection.devToolsOpened ||
-        cheatDetection.speedHacks || cheatDetection.timeHacks) {
-        secretWord = 'SNEAKY_CHEATER_2024';
-    } else {
-        secretWord = 'TRUE_LOVE_CONQUERS_ALL';
-    }
+    let secretWord = "good job, i didn't even finish this so idk if you're seeing this";
+    // if (cheatDetection.consoleOpened || cheatDetection.devToolsOpened ||
+    //     cheatDetection.speedHacks || cheatDetection.timeHacks) {
+    //     secretWord = 'SNEAKY_CHEATER_2024';
+    // } else {
+    //     secretWord = 'TRUE_LOVE_CONQUERS_ALL';
+    // }
     document.getElementById('secretWordText').textContent = secretWord;
     document.getElementById('secretWord').style.display = 'block';
 }
